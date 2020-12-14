@@ -350,7 +350,6 @@ tpm2totp_qrencode(
         + strlen(URL_PREFIX);
     char * const url = calloc(1, url_len);
     snprintf(url, url_len, URL_PREFIX "%s", totp_name, base32key);
-    free((void*) base32key);
 
     const char * const qrpic = qrencode(url);
     if (!qrpic) {
@@ -359,7 +358,8 @@ tpm2totp_qrencode(
     }
 
 //    printf("%s\n", qrpic);
-    printf("%s\n", url);
+    printf("%s\n",totp_name);
+    printf("%s\n", base32key);
     free((void*) qrpic);
     free((void*) url);
     return 0;

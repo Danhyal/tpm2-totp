@@ -359,7 +359,6 @@ tpm2totp_qrencode(
     }
 
     printf("%s\n", qrpic);
-    printf("%s\n", url);
     free((void*) qrpic);
     free((void*) url);
     return 0;
